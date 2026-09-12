@@ -599,6 +599,8 @@ const memberProfiles = {
   "范可晴": createMemberProfile({
     nameZh: "范可晴",
     nameEn: "Keqing Fan",
+    focusZh: "联邦学习隐私与公平性、智能体安全与可信执行",
+    focusEn: "Privacy and fairness in federated learning, AI agent security, and trustworthy execution",
     image: "assets/images/people/keqing-fan.jpg",
   }),
   "马亦瞳": createMemberProfile({
@@ -633,6 +635,8 @@ const memberProfiles = {
   "胡文晗": createMemberProfile({
     nameZh: "胡文晗",
     nameEn: "Wenhan Hu",
+    focusZh: "联邦学习安全、大模型安全、智能体可信审计",
+    focusEn: "Federated learning security, large language model security, and trustworthy auditing of AI agents",
     image: "assets/images/people/wenhan-hu.jpg",
   }),
   "李玉堂": createMemberProfile({
@@ -695,8 +699,8 @@ const memberProfiles = {
   "李梦纯": createMemberProfile({
     nameZh: "李梦纯",
     nameEn: "Mengchun Li",
-    focusZh: "时间序列预测",
-    focusEn: "Time-series forecasting",
+    focusZh: "时序预测、多模态大模型内容安全、多图像联合风险检测",
+    focusEn: "Time-series forecasting, content safety for multimodal large language models, and joint risk detection across multiple images",
     image: "assets/images/people/mengchun-li.jpg",
   }),
   "李霖杭": createMemberProfile({
@@ -728,8 +732,8 @@ const memberProfiles = {
   "张卓群": createMemberProfile({
     nameZh: "张卓群",
     nameEn: "Zhuoqun Zhang",
-    focusZh: "多模态联邦学习、异构跨模态检索与大模型安全对齐",
-    focusEn: "Multimodal federated learning, heterogeneous cross-modal retrieval, and safety alignment for large language models",
+    focusZh: "联邦多模态学习、大语言模型与智能体系统的安全和推理成本优化",
+    focusEn: "Federated multimodal learning, security of large language models and agentic systems, and inference-cost optimization",
     image: "assets/images/people/zhuoqun-zhang.jpg",
   }),
   "林正烨": createMemberProfile({
