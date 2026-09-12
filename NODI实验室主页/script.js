@@ -195,8 +195,8 @@ const translations = {
       },
     },
     footer: {
-      name: "NODI Lab",
-      fullName: "网络优化与分布式智能实验室 · 吉林大学",
+      name: "网络优化与分布式智能实验室 · 吉林大学",
+      fullName: "地址：吉林省长春市长白山实验室A105",
       copyright: "© 2026 NODI Lab, Jilin University.",
       rights: "保留所有权利。",
     },
@@ -415,8 +415,8 @@ const translations = {
       },
     },
     footer: {
-      name: "NODI Lab",
-      fullName: "Network Optimization and Distributed Intelligence Laboratory · Jilin University",
+      name: "Network Optimization and Distributed Intelligence Laboratory",
+      fullName: "Address: A105, Changbaishan Laboratory, Changchun, China.",
       copyright: "© 2026 NODI Lab, Jilin University.",
       rights: "All rights reserved.",
     },
