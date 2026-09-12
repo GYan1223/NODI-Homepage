@@ -1,0 +1,28 @@
+.DS_Store
+**/.DS_Store
+*.log
+
+# Original and working assets are kept locally but are not needed by the website.
+NODI Logo.png
+NODI公众号.jpg
+assets/NODI成员/
+assets/docs/
+assets/风景-净月潭1.png
+assets/风景-净月潭2.png
+assets/images/branding/
+assets/images/outcomes/
+assets/images/team/
+assets/images/video/
+assets/images/hero-jlu-dingxin.jpg
+
+# Publish only the optimized, metadata-free gallery images listed below.
+assets/images/gallery/*
+!assets/images/gallery/freshman-meeting-2026-09.jpg
+!assets/images/gallery/jeju-kdd-2026-08.jpg
+!assets/images/gallery/gang-yan-kdd-2026-08.jpg
+!assets/images/gallery/waic-2026-07.jpg
+!assets/images/gallery/istanbul-iwqos-2026-07.jpg
+!assets/images/gallery/gang-yan-iwqos-2026-07.jpg
+!assets/images/gallery/xiong-guojun-talk-2026-06.jpg
+!assets/images/gallery/yang-talk-2026-04.jpg
+!assets/images/gallery/jingyuetan-outing-2026-04.jpg
