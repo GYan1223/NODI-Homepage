@@ -78,6 +78,16 @@ for (const reference of references) {
   }
 }
 
+const peopleImageDirectory = path.join(root, "assets/images/people");
+if (fs.existsSync(peopleImageDirectory)) {
+  for (const filename of fs.readdirSync(peopleImageDirectory)) {
+    const imagePath = path.join(peopleImageDirectory, filename);
+    if (fs.statSync(imagePath).isFile() && fs.statSync(imagePath).size > 128 * 1024) {
+      errors.push(`Member portrait exceeds 128 KiB: assets/images/people/${filename}`);
+    }
+  }
+}
+
 const ids = [...html.matchAll(/\bid=["']([^"']+)["']/g)].map((match) => match[1]);
 const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
 if (duplicateIds.length) {
@@ -104,20 +114,32 @@ if (!/window\.print\s*=\s*showPrintNotice/.test(js)) {
   errors.push("Programmatic print protection is missing.");
 }
 
-if (/flagcounter\.com/i.test(html + css + js)) {
-  errors.push("Legacy Flag Counter integration is still present.");
+if (!/data-src=["']https:\/\/s05\.flagcounter\.com\/count\/vuqg\//.test(html)) {
+  errors.push("Hidden Flag Counter tracker is missing.");
 }
 
-if (!/data-goatcounter=["']https:\/\/gyan\.goatcounter\.com\/count["']/.test(html)) {
-  errors.push("GoatCounter tracking endpoint is missing.");
+if (!/class=["']flagcounter-tracker["'][^>]*loading=["']eager["']/.test(html)) {
+  errors.push("Flag Counter must load eagerly so every page load can be counted.");
 }
 
-if (!/src=["']https:\/\/gc\.zgo\.at\/count\.js["']/.test(html)) {
-  errors.push("GoatCounter script must use an absolute HTTPS URL.");
+if (!/\.flagcounter-tracker\s*\{[\s\S]*?position:\s*absolute[\s\S]*?opacity:\s*0/.test(css)) {
+  errors.push("Flag Counter tracker must be visually hidden.");
 }
 
-if (!/gyan\.goatcounter\.com\/counter\/TOTAL\.json/.test(js) || !/function\s+installGoatCounterDisplay\s*\(/.test(js)) {
-  errors.push("Custom GoatCounter total display is missing.");
+if (!/function\s+installFlagCounterTracker\s*\(/.test(js) || !/www\.nodi-lab\.org/.test(js)) {
+  errors.push("Flag Counter must run only on the production domain.");
+}
+
+if (/footer-counter-block/.test(html + css)) {
+  errors.push("Flag Counter must not appear in the visible footer.");
+}
+
+if (/goatcounter\.com|gc\.zgo\.at/i.test(html + css + js)) {
+  errors.push("Legacy GoatCounter integration is still present.");
+}
+
+if (!/image\.loading\s*=\s*["']lazy["']/.test(js) || !/image\.fetchPriority\s*=\s*["']low["']/.test(js)) {
+  errors.push("Deferred member portrait loading is missing.");
 }
 
 if (errors.length) {
