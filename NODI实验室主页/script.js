@@ -199,7 +199,6 @@ const translations = {
       fullName: "网络优化与分布式智能实验室 · 吉林大学",
       copyright: "© 2026 NODI Lab, Jilin University.",
       rights: "保留所有权利。",
-      counterMetric: "累计访问",
     },
     guard: {
       watermark: "NODI Lab",
@@ -420,7 +419,6 @@ const translations = {
       fullName: "Network Optimization and Distributed Intelligence Laboratory · Jilin University",
       copyright: "© 2026 NODI Lab, Jilin University.",
       rights: "All rights reserved.",
-      counterMetric: "Total Visits",
     },
     guard: {
       watermark: "NODI Lab",
@@ -1999,6 +1997,9 @@ function createMemberAvatar(member) {
     image.draggable = false;
     image.loading = "lazy";
     image.decoding = "async";
+    image.fetchPriority = "low";
+    image.width = 148;
+    image.height = 148;
     if (member.imagePosition) {
       image.style.objectPosition = member.imagePosition;
     }
@@ -2358,30 +2359,15 @@ function installLightProtection() {
   window.print = showPrintNotice;
 }
 
-async function installGoatCounterDisplay() {
-  const block = document.querySelector("#goatcounter-display");
-  const value = document.querySelector("#goatcounter-value");
+function installFlagCounterTracker() {
+  const tracker = document.querySelector(".flagcounter-tracker");
+  if (!tracker) return;
 
-  if (!block || !value) return;
+  const productionHosts = new Set(["www.nodi-lab.org", "nodi-lab.org"]);
+  if (!productionHosts.has(window.location.hostname.toLowerCase())) return;
 
-  try {
-    const response = await fetch("https://gyan.goatcounter.com/counter/TOTAL.json", {
-      headers: { Accept: "application/json" },
-    });
-
-    if (!response.ok) throw new Error(`GoatCounter returned ${response.status}`);
-
-    const data = await response.json();
-    if (typeof data.count !== "string" && typeof data.count !== "number") {
-      throw new Error("GoatCounter response does not contain a count");
-    }
-
-    value.textContent = String(data.count);
-    block.classList.remove("is-unavailable");
-  } catch {
-    value.textContent = "—";
-    block.classList.add("is-unavailable");
-  }
+  const source = tracker.dataset.src;
+  if (source) tracker.src = source;
 }
 
 galleryMore.addEventListener("click", () => {
@@ -2408,7 +2394,7 @@ langZhButton.addEventListener("click", () => setLanguage("zh"));
 langEnButton.addEventListener("click", () => setLanguage("en"));
 
 installLightProtection();
-installGoatCounterDisplay();
+installFlagCounterTracker();
 setLanguage(currentLanguage, false);
 
 // Keep content visible without JavaScript; motion is progressive enhancement.

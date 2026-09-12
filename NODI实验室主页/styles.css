@@ -1397,7 +1397,7 @@ a.contact-item:focus-visible {
 
 .footer {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   gap: 18px 40px;
   padding: 26px max(24px, calc((100vw - var(--content)) / 2)) 34px;
@@ -1412,37 +1412,6 @@ a.contact-item:focus-visible {
 .footer-legal {
   display: grid;
   gap: 2px;
-}
-
-.footer-counter-block {
-  display: grid;
-  justify-items: center;
-  justify-self: center;
-  min-width: 116px;
-  gap: 1px;
-  text-align: center;
-}
-
-.footer-counter-value {
-  color: var(--brand);
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
-  font-weight: 680;
-  font-variant-numeric: tabular-nums;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.footer-counter-label {
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.footer-counter-block.is-unavailable {
-  opacity: 0.68;
 }
 
 .footer-identity strong {
@@ -1477,9 +1446,16 @@ a.contact-item:focus-visible {
     text-align: center;
   }
 
-  .footer-counter-block {
-    justify-items: center;
-  }
+}
+
+.flagcounter-tracker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .print-guard {
