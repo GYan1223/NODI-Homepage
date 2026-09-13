@@ -445,6 +445,23 @@ const translations = {
 
 const galleryItems = [
   {
+    id: "ccst-50th-anniversary-2026",
+    categoryKey: "academic",
+    month: { zh: "2026 年 9 月", en: "September 2026" },
+    title: {
+      zh: "燕刚教授参加计算机学科创建50周年庆祝大会",
+      en: "Professor Gang Yan at the 50th Anniversary Celebration of Computer Science at Jilin University",
+    },
+    description: {
+      zh: "燕刚教授参加吉林大学计算机学科创建50周年庆祝大会，并作题为“复杂环境下的可信适应：从结构识别到影响控制”的学术报告。",
+      en: "At the 50th anniversary celebration of computer science at Jilin University, Professor Gang Yan presented “Trustworthy Adaptation in Complex Environments: From Structural Identification to Influence Control.”",
+    },
+    image: "assets/images/gallery/gang-yan-ccst-50th-2026-09.jpg",
+    thumbnail: "assets/images/gallery/gang-yan-ccst-50th-2026-09.jpg",
+    objectPosition: "50% 57%",
+    accent: ["#7f5c57", "#eadfd9", "#523b3b"],
+  },
+  {
     id: "freshman-meeting-2026",
     categoryKey: "academic",
     month: { zh: "2026 年 9 月", en: "September 2026" },
@@ -457,6 +474,20 @@ const galleryItems = [
     thumbnail: "assets/images/gallery/freshman-meeting-2026-09.jpg",
     objectPosition: "50% 58%",
     accent: ["#7295bf", "#e0ebf6", "#294a73"],
+  },
+  {
+    id: "cfai-2026",
+    categoryKey: "academic",
+    month: { zh: "2026 年 8 月", en: "August 2026" },
+    title: { zh: "燕刚教授参加第21届中国人工智能基础年会", en: "Professor Gang Yan at CFAI 2026" },
+    description: {
+      zh: "燕刚教授参加第二十一届中国人工智能基础年会，并在“AI＋互联网安全”分论坛作题为“复杂环境下的可信适应：结构、统计与鲁棒性”的报告。",
+      en: "At the 21st China Annual Conference on Foundations of Artificial Intelligence (CFAI 2026), Professor Gang Yan presented “Trustworthy Adaptation in Complex Environments: Structure, Statistics, and Robustness” in the AI and Internet Security forum.",
+    },
+    image: "assets/images/gallery/gang-yan-cfai-2026-08.jpg",
+    thumbnail: "assets/images/gallery/gang-yan-cfai-2026-08.jpg",
+    objectPosition: "50% 53%",
+    accent: ["#3e7fc5", "#d8e9fa", "#194c83"],
   },
   {
     id: "jeju-island-2026",
@@ -536,6 +567,20 @@ const galleryItems = [
     image: "assets/images/gallery/xiong-guojun-talk-2026-06.jpg",
     thumbnail: "assets/images/gallery/xiong-guojun-talk-2026-06.jpg",
     accent: ["#729ad0", "#dfebfb", "#315182"],
+  },
+  {
+    id: "ccst-graduation-2026",
+    categoryKey: "academic",
+    month: { zh: "2026 年 6 月", en: "June 2026" },
+    title: { zh: "燕刚教授参加计算机学院毕业典礼", en: "Professor Gang Yan at the CCST Graduation Ceremony" },
+    description: {
+      zh: "燕刚教授作为教师代表参加吉林大学计算机科学与技术学院2026年毕业典礼并致辞。",
+      en: "Professor Gang Yan attended the 2026 graduation ceremony of Jilin University's College of Computer Science and Technology and addressed the graduates as a faculty representative.",
+    },
+    image: "assets/images/gallery/gang-yan-graduation-2026-06.jpg",
+    thumbnail: "assets/images/gallery/gang-yan-graduation-2026-06.jpg",
+    objectPosition: "50% 55%",
+    accent: ["#a64b50", "#f4dedc", "#652b32"],
   },
   {
     id: "yang-doctor-talk",
@@ -1704,7 +1749,7 @@ const papersMore = document.querySelector("#papers-more");
 const langZhButton = document.querySelector("#lang-zh");
 const langEnButton = document.querySelector("#lang-en");
 
-const GALLERY_PAGE_SIZE = galleryItems.length;
+const GALLERY_PAGE_SIZE = 6;
 const OUTCOME_PREVIEW_COUNT = 13;
 const galleryState = {
   categoryKey: "all",
