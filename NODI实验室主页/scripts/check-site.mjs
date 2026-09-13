@@ -142,6 +142,10 @@ if (!/image\.loading\s*=\s*["']lazy["']/.test(js) || !/image\.fetchPriority\s*=\
   errors.push("Deferred member portrait loading is missing.");
 }
 
+if (!/const\s+GALLERY_PAGE_SIZE\s*=\s*6\s*;/.test(js)) {
+  errors.push("The gallery must show six thumbnails before expansion.");
+}
+
 if (errors.length) {
   console.error("Static-site validation failed:\n");
   for (const error of errors) console.error(`- ${error}`);
