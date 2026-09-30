@@ -168,7 +168,7 @@ const translations = {
       papers: {
         kicker: "PUBLICATION RECORD",
         title: "完整论文列表",
-        note: "截至 2026 年 9 月共整理 33 项；同一年内先列会议论文，再列期刊论文，各类别内优先排列 Gang Yan 为第一作者、共同第一作者或末位作者的论文，再按发表场所层级排序。",
+        note: "截至 2026 年 9 月共整理 32 项；同一年内先列会议论文，再列期刊论文，各类别内优先排列 Gang Yan 为第一作者、共同第一作者或末位作者的论文，再按发表场所层级排序。",
         newTab: "（在新标签页打开）",
         scholar: "Google Scholar 完整列表",
         faculty: "吉林大学教师主页",
@@ -388,7 +388,7 @@ const translations = {
       papers: {
         kicker: "PUBLICATIONS",
         title: "Publications",
-        note: "33 published or accepted papers as of September 2026. Within each year, conference papers precede journal articles; work led by Gang Yan or listing him as senior or corresponding author appears first within each category, followed by venue prominence.",
+        note: "32 published or accepted papers as of September 2026. Within each year, conference papers precede journal articles; work led by Gang Yan or listing him as senior or corresponding author appears first within each category, followed by venue prominence.",
         newTab: " (opens in a new tab)",
         scholar: "Google Scholar",
         faculty: "Jilin University Faculty Profile",
@@ -726,6 +726,26 @@ const memberProfiles = {
     focusEn: "Federated learning",
     image: "assets/images/people/youjiang-huang.jpg",
   }),
+  "郭天烨": createMemberProfile({
+    nameZh: "郭天烨",
+    nameEn: "Tianye Guo",
+    image: "assets/images/people/tianye-guo.jpg",
+  }),
+  "蔡子琪": createMemberProfile({
+    nameZh: "蔡子琪",
+    nameEn: "Ziqi Cai",
+    image: "assets/images/people/ziqi-cai.jpg",
+  }),
+  "程盈婓": createMemberProfile({
+    nameZh: "程盈婓",
+    nameEn: "Yingfei Cheng",
+    image: "assets/images/people/yingfei-cheng.jpg",
+  }),
+  "史新生": createMemberProfile({
+    nameZh: "史新生",
+    nameEn: "Xinsheng Shi",
+    image: "assets/images/people/xinsheng-shi.jpg",
+  }),
   "刘沛霖": createMemberProfile({
     nameZh: "刘沛霖",
     nameEn: "Peilin Liu",
@@ -791,6 +811,12 @@ const memberProfiles = {
   "赵传浩": createMemberProfile({
     nameZh: "赵传浩",
     nameEn: "Chuanhao Zhao",
+    image: "assets/images/people/chuanhao-zhao.jpg",
+  }),
+  "陈儒杰": createMemberProfile({
+    nameZh: "陈儒杰",
+    nameEn: "Rujie Chen",
+    image: "assets/images/people/rujie-chen.jpg",
   }),
 };
 
@@ -813,7 +839,7 @@ const teamGroups = [
     key: "master",
     label: { zh: "硕士生", en: "Master's Students" },
     previewCount: TEAM_PREVIEW_COUNT,
-    members: pickMembers(["胡文晗", "李玉堂", "朱同曼", "李曼迪", "高雪岩", "黄会敏", "黄佑江"]),
+    members: pickMembers(["胡文晗", "李玉堂", "朱同曼", "李曼迪", "高雪岩", "黄会敏", "黄佑江", "郭天烨", "蔡子琪", "程盈婓", "史新生"]),
   },
   {
     key: "undergraduate",
@@ -830,6 +856,7 @@ const teamGroups = [
       "盛浩鹏",
       "李霖杭",
       "赵传浩",
+      "陈儒杰",
     ]),
   },
 ];
