@@ -787,8 +787,8 @@ const memberProfiles = {
     focusEn: "Speech emotion recognition with self-supervised speech representations and contrastive learning",
     image: "assets/images/people/haopeng-sheng.jpg",
   }),
-  "王策燃": createMemberProfile({
-    nameZh: "王策燃",
+  "王策然": createMemberProfile({
+    nameZh: "王策然",
     nameEn: "Ceran Wang",
     focusZh: "联邦学习",
     focusEn: "Federated learning",
@@ -848,6 +848,7 @@ const teamGroups = [
     members: pickMembers([
       "刘沛霖",
       "林正烨",
+      "王策然",
       "李梦纯",
       "王涵平",
       "王天琦",
