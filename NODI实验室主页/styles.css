@@ -594,6 +594,7 @@ html[lang="en"] .pillar-card h3 {
 
 .update-item {
   display: grid;
+  align-content: start;
   gap: 8px;
   padding: 17px 0;
   border-top: 1px solid var(--line);
@@ -715,6 +716,12 @@ html[lang="en"] .pillar-card h3 {
 .update-item-toggle:hover,
 .update-item-toggle:focus-visible {
   text-decoration: underline;
+}
+
+.update-item-detail-footer {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 2px;
 }
 
 .updates-more,
@@ -1982,8 +1989,30 @@ section[id] {
 
 .pillar-grid { gap: 16px; }
 .updates-grid { gap: 16px; align-items: stretch; }
-.updates-card { grid-template-rows: auto 1fr auto; }
+.updates-card {
+  grid-template-rows: auto 1fr auto;
+}
 .updates-list { align-content: start; }
+
+@media (min-width: 821px) {
+  /* Keep both collapsed update columns level and align their three preview rows. */
+  .updates-card {
+    height: 100%;
+  }
+
+  .updates-list.is-balanced {
+    grid-auto-rows: 1fr;
+  }
+
+  /* Once a detail opens, let each column follow its own content height. */
+  .updates-grid.has-expanded-content {
+    align-items: start;
+  }
+
+  .updates-grid.has-expanded-content .updates-card {
+    height: auto;
+  }
+}
 .pillar-card, .updates-card, .team-card, .team-group, .outcomes-panel, .contact-card {
   padding: var(--card-padding);
 }

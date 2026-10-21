@@ -116,6 +116,8 @@ const translations = {
       more: {
         publications: "加载更多成果",
         news: "加载更多动态",
+        publicationsLess: "收起研究成果",
+        newsLess: "收起新闻与公告",
       },
       item: {
         pinned: "置顶",
@@ -336,6 +338,8 @@ const translations = {
       more: {
         publications: "More Research Highlights",
         news: "More News",
+        publicationsLess: "Show Fewer Research Highlights",
+        newsLess: "Show Fewer News Items",
       },
       item: {
         pinned: "Pinned",
@@ -648,7 +652,7 @@ const memberProfiles = {
     focusEn: "Privacy and fairness in federated learning, AI agent security, and trustworthy execution",
     image: "assets/images/people/keqing-fan.jpg",
   }),
-  "马亦瞳": createMemberProfile({
+  "马亦曈": createMemberProfile({
     nameZh: "马亦曈",
     nameEn: "Yitong Ma",
     focusZh: "机器学习安全、AI 医疗与高性能网络",
@@ -833,7 +837,7 @@ const teamGroups = [
     key: "doctoral",
     label: { zh: "博士生", en: "Ph.D. Students" },
     previewCount: TEAM_PREVIEW_COUNT,
-    members: pickMembers(["范可晴", "马亦瞳", "马秀慧", "王垚", "曹先智"]),
+    members: pickMembers(["范可晴", "马亦曈", "马秀慧", "王垚", "曹先智"]),
   },
   {
     key: "master",
@@ -876,7 +880,7 @@ const publications = [
         {
           title: "论文一｜FedBIG：让联邦更新的几何判断更可信",
           paragraphs: [
-            "《When Geometry Becomes Unreliable: Robust Federated Aggregation via Bounded Influence》由马亦瞳同学担任第一作者、燕刚教授担任通讯作者。论文重新审视鲁棒联邦聚合中的基础假设：在每轮参与客户端有限、模型更新维度极高且数据非独立同分布时，仅凭范数、距离、角度或相似度识别异常更新，其几何统计本身可能并不稳定。",
+            "《When Geometry Becomes Unreliable: Robust Federated Aggregation via Bounded Influence》由马亦曈同学担任第一作者、燕刚教授担任通讯作者。论文重新审视鲁棒联邦聚合中的基础假设：在每轮参与客户端有限、模型更新维度极高且数据非独立同分布时，仅凭范数、距离、角度或相似度识别异常更新，其几何统计本身可能并不稳定。",
             "FedBIG 先将高维更新映射到由当前参与客户端数量能够支撑的低维空间，再通过鲁棒尺度估计、协方差校准与白化削弱极端更新及方向尺度差异，最后依据稳定后的偏离程度限制可疑客户端对聚合结果的影响。实验覆盖图像与文本任务、多种模型投毒和后门攻击，并考察强数据异质性与低客户端参与率。论文同时指出方法的适用边界：当参与客户端过少或正常更新过度分散时，服务器难以形成可靠几何判断，鲁棒聚合性能也会下降。",
           ],
         },
@@ -1107,6 +1111,7 @@ const publications = [
 const featuredNewsItems = [
   {
     pinned: true,
+    date: "2026-09-11",
     meta: { zh: "更新于 2026-09-11 · 博士招生", en: "Updated Sep 11, 2026 · Ph.D. Admissions" },
     title: {
       zh: "NODI实验室2027年博士研究生招生公告",
@@ -1122,7 +1127,7 @@ const featuredNewsItems = [
           title: "招生计划",
           paragraphs: [
             "2027 年秋季：计划招收 3 名学术型博士研究生。招生类型、最终名额、报名条件与录取流程以吉林大学及学院当年度正式通知为准。",
-            "实验室同时招收 2027 年推免硕士研究生，计划名额 5 个，具体信息见下一条置顶公告。",
+            "实验室同时招收 2027 年推免硕士研究生，计划名额 5 个，具体信息见下方单独发布的推免招生公告。",
           ],
         },
         {
@@ -1163,7 +1168,7 @@ const featuredNewsItems = [
           title: "Planned intake",
           paragraphs: [
             "The lab plans to recruit three academic-track Ph.D. students for Fall 2027, including applicants entering directly from a bachelor's program. The final quota, eligibility requirements, and admissions process are subject to official notices from Jilin University and the college.",
-            "The lab also plans to recruit five master's students for 2027 through China's recommendation-based graduate admissions pathway; see the next pinned announcement for details.",
+            "The lab also plans to recruit five master's students for 2027 through China's recommendation-based graduate admissions pathway; see the separate master's admissions announcement below for details.",
           ],
         },
         {
@@ -1208,7 +1213,7 @@ const featuredNewsItems = [
     ],
   },
   {
-    pinned: true,
+    date: "2026-07-01",
     meta: { zh: "2026-07-01 · 推免招生", en: "Jul 1, 2026 · Master's Admissions" },
     title: {
       zh: "NODI实验室招收2027年推免生",
@@ -1296,6 +1301,51 @@ const featuredNewsItems = [
     ],
   },
   {
+    date: "2026-10-21",
+    meta: { zh: "2026-10-21 · 人才培养", en: "Oct 21, 2026 · Talent Development" },
+    title: {
+      zh: "喜报｜马亦曈入选中国科协博士生专项计划",
+      en: "Yitong Ma Selected for the 2026 CAST Doctoral Talent Program",
+    },
+    text: {
+      zh: "NODI实验室博士生马亦曈入选2026年中国科协青年科技人才培育工程博士生专项计划。",
+      en: "NODI Lab doctoral student Yitong Ma has been selected for the 2026 China Association for Science and Technology (CAST) Young Science and Technology Talent Development Program for Doctoral Students.",
+    },
+    detail: {
+      zh: [
+        {
+          title: "入选信息",
+          paragraphs: [
+            "根据中国科协“智慧科协”平台通知，NODI实验室博士生马亦曈入选2026年中国科协青年科技人才培育工程博士生专项计划。向马亦曈同学表示祝贺！",
+          ],
+        },
+        {
+          title: "培养内容",
+          paragraphs: [
+            "该专项计划依据《中国科协青年科技人才培育工程博士生专项计划管理办法》等规定实施。根据平台所示承诺内容，入选者将在培养期内参加由中国科协、全国学会、省级科协及科协基层组织等开展的政治训练、专业锻炼和社会历练等培养活动。",
+            "实验室将支持马亦曈同学扎实推进科研工作，积极参与专业交流与实践锻炼，在严格遵守学术规范和项目管理要求的基础上持续提升科研能力与综合素养。",
+          ],
+        },
+      ],
+      en: [
+        {
+          title: "Selection",
+          paragraphs: [
+            "According to a notification issued through the China Association for Science and Technology (CAST) platform, NODI Lab doctoral student Yitong Ma has been selected for the 2026 CAST Young Science and Technology Talent Development Program for Doctoral Students. Congratulations to Yitong on this recognition.",
+          ],
+        },
+        {
+          title: "Program development",
+          paragraphs: [
+            "The program is administered under CAST's relevant management rules. The undertaking displayed on the platform states that participants take part in development activities organized by CAST, national academic societies, provincial science and technology associations, and local CAST organizations, including political education, professional development, and social practice.",
+            "NODI Lab will support Yitong in advancing rigorous research, engaging in professional exchange and practical training, and strengthening both research capability and broader professional development while observing academic and program requirements.",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    date: "2026-07-22",
     meta: { zh: "2026-07-22 · 学术交流", en: "Jul 22, 2026 · Research Exchange" },
     title: {
       zh: "从WAIC出发，走向更深的合作",
@@ -1353,6 +1403,7 @@ const featuredNewsItems = [
     },
   },
   {
+    date: "2026-06-06",
     meta: { zh: "2026-06-06 · 专家讲座", en: "Jun 6, 2026 · Invited Seminar" },
     title: {
       zh: "【专家讲座-上海交大熊国钧】智能决策进化：From Algorithms & RL to LLM-based Agents",
@@ -1420,6 +1471,12 @@ const featuredNewsItems = [
     },
   },
 ];
+
+function compareFeaturedNews(a, b) {
+  const pinnedDifference = Number(Boolean(b.pinned)) - Number(Boolean(a.pinned));
+  if (pinnedDifference !== 0) return pinnedDifference;
+  return b.date.localeCompare(a.date);
+}
 
 
 
@@ -1768,6 +1825,7 @@ const publicationsList = document.querySelector("#publications-list");
 const publicationsMore = document.querySelector("#publications-more");
 const newsList = document.querySelector("#news-list");
 const newsMore = document.querySelector("#news-more");
+const updatesGrid = document.querySelector(".updates-grid");
 
 const papersList = document.querySelector("#papers-list");
 const papersMore = document.querySelector("#papers-more");
@@ -2233,6 +2291,8 @@ function renderUpdateColumn(container, button, items, key) {
 
     article.append(metaRow, title, description);
 
+    let detailElement = null;
+
     if (expanded && hasMore) {
       const detail = document.createElement("div");
       detail.className = "update-item-detail";
@@ -2256,16 +2316,16 @@ function renderUpdateColumn(container, button, items, key) {
         detail.appendChild(sectionElement);
       });
 
-      article.appendChild(detail);
+      detailElement = detail;
     }
 
     const actions = document.createElement("div");
     actions.className = "update-item-actions";
 
-    if (hasMore) {
+    const createDetailToggle = (extraClass = "") => {
       const toggle = document.createElement("button");
       toggle.type = "button";
-      toggle.className = "update-item-toggle";
+      toggle.className = `update-item-toggle${extraClass ? ` ${extraClass}` : ""}`;
       toggle.textContent = expanded
         ? getTranslation("updates.item.less")
         : getTranslation("updates.item.more");
@@ -2274,7 +2334,11 @@ function renderUpdateColumn(container, button, items, key) {
         updateItemExpandedState[itemKey] = !expanded;
         renderUpdates();
       });
-      actions.appendChild(toggle);
+      return toggle;
+    };
+
+    if (hasMore) {
+      actions.appendChild(createDetailToggle());
     }
 
     if (item.url) {
@@ -2299,15 +2363,39 @@ function renderUpdateColumn(container, button, items, key) {
 
     if (actions.childElementCount) article.appendChild(actions);
 
+    if (detailElement) {
+      article.appendChild(detailElement);
+
+      const detailFooter = document.createElement("div");
+      detailFooter.className = "update-item-detail-footer";
+      detailFooter.appendChild(createDetailToggle("update-item-toggle-bottom"));
+      article.appendChild(detailFooter);
+    }
+
     container.appendChild(article);
   });
 
-  button.hidden = visibleItems.length >= items.length;
+  const canCollapse = items.length > updatePageSize[key] && visibleItems.length >= items.length;
+  button.hidden = items.length <= updatePageSize[key];
+  button.textContent = canCollapse
+    ? getTranslation(`updates.more.${key}Less`)
+    : getTranslation(`updates.more.${key}`);
+  button.setAttribute("aria-expanded", updateState[key] > updatePageSize[key] ? "true" : "false");
 }
 
 function renderUpdates() {
   renderUpdateColumn(publicationsList, publicationsMore, publications, "publications");
-  renderUpdateColumn(newsList, newsMore, featuredNewsItems, "news");
+  const orderedNewsItems = [...featuredNewsItems].sort(compareFeaturedNews);
+  renderUpdateColumn(newsList, newsMore, orderedNewsItems, "news");
+
+  const hasExpandedItem = Object.values(updateItemExpandedState).some(Boolean);
+  const hasExpandedList =
+    updateState.publications > updatePageSize.publications ||
+    updateState.news > updatePageSize.news;
+  const hasExpandedContent = hasExpandedItem || hasExpandedList;
+  publicationsList.classList.toggle("is-balanced", !hasExpandedContent);
+  newsList.classList.toggle("is-balanced", !hasExpandedContent);
+  updatesGrid?.classList.toggle("has-expanded-content", hasExpandedContent);
 }
 
 function getUpdateSummaryText(item) {
@@ -2451,12 +2539,18 @@ galleryMore.addEventListener("click", () => {
 });
 
 publicationsMore.addEventListener("click", () => {
-  updateState.publications += updatePageSize.publications;
+  updateState.publications =
+    updateState.publications >= publications.length
+      ? updatePageSize.publications
+      : Math.min(publications.length, updateState.publications + updatePageSize.publications);
   renderUpdates();
 });
 
 newsMore.addEventListener("click", () => {
-  updateState.news += updatePageSize.news;
+  updateState.news =
+    updateState.news >= featuredNewsItems.length
+      ? updatePageSize.news
+      : Math.min(featuredNewsItems.length, updateState.news + updatePageSize.news);
   renderUpdates();
 });
 
