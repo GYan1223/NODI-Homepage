@@ -866,6 +866,75 @@ const teamGroups = [
 
 const publications = [
   {
+    meta: "2026-11-03 · ACM WSDM 2027",
+    title: {
+      zh: "实验室两篇论文被ACM WSDM 2027接收",
+      en: "Two NODI Lab Papers Accepted to ACM WSDM 2027",
+    },
+    text: {
+      zh: "两项工作分别研究联邦视觉学习中的算法公平性与联邦训练阶段的后门攻击防御。",
+      en: "The two papers address algorithmic fairness in federated visual learning and training-stage defense against backdoor attacks in federated learning.",
+    },
+    detail: {
+      zh: [
+        {
+          title: "录用概况",
+          paragraphs: [
+            "实验室两篇可信联邦学习论文被 ACM WSDM 2027 接收。两项工作分别从特征表征优化与训练数据安全两个层面研究分布式智能系统中的公平性、安全性与可靠性问题。",
+          ],
+        },
+        {
+          title: "论文一｜FAIRDARC：双层协同表征校正",
+          paragraphs: [
+            "《FAIRDARC: Dual-Level Aligned Representation Correction for Fair Federated Visual Learning》由范可晴担任第一作者、王喆教授担任第二作者、燕刚教授担任通讯作者。论文关注数据异构条件下联邦视觉学习的群体公平性，针对客户端特征表征学习与服务器端公平性校准缺乏有效协同的问题，提出双层对齐表征校正框架 FAIRDARC。",
+            "FAIRDARC 在客户端进行多域表征调控，并在服务器端的对齐空间中实施公平性校准，以协调局部模型更新与全局去偏目标，同时抑制与敏感属性相关的表征偏差。论文在 FairFace、UTKFace 和 CelebA 上进行实验；结果表明，该方法在保持预测性能的同时降低了群体间的预测差异，改善了公平性与准确率之间的平衡。",
+          ],
+        },
+        {
+          title: "论文二｜BRIFi：在线投毒样本挖掘",
+          paragraphs: [
+            "《BRIFi: Client-Calibrated Online Poisoned-Sample Mining for Backdoor-Resilient Federated Learning》由马亦曈担任第一作者、燕刚教授担任通讯作者。论文关注联邦学习中的后门攻击与本地训练数据安全，针对仅依赖服务器端聚合防御难以及时阻止恶意样本污染本地模型更新的问题，将防御环节前移到客户端训练阶段。",
+            "BRIFi 结合跨任务视觉检测、客户端鲁棒动态校准与预算约束过滤，在梯度更新前识别并过滤可疑投毒样本，同时限制正常样本的误删。论文在四个图像分类数据集和六类后门攻击上进行验证；报告的平均攻击成功率由 94.7% 降至 5.3%，正常任务预测精度基本保持稳定。",
+          ],
+        },
+        {
+          title: "共同研究主线",
+          paragraphs: [
+            "两项工作分别从模型表征与训练数据两个层面增强可信联邦学习：FAIRDARC 关注异构环境下的公平表征与协同去偏，BRIFi 关注本地训练阶段的恶意样本识别与风险抑制。二者共同服务于公平、安全且可靠的分布式智能系统。",
+          ],
+        },
+      ],
+      en: [
+        {
+          title: "Acceptance overview",
+          paragraphs: [
+            "Two NODI Lab papers on trustworthy federated learning have been accepted to ACM WSDM 2027. The studies address fairness, security, and reliability in distributed intelligent systems from two complementary perspectives: representation learning and training-data integrity.",
+          ],
+        },
+        {
+          title: "Paper 1 | FAIRDARC: Dual-level representation correction",
+          paragraphs: [
+            "“FAIRDARC: Dual-Level Aligned Representation Correction for Fair Federated Visual Learning” is authored by Keqing Fan as first author, Zhe Wang as second author, and Gang Yan as corresponding author. The paper studies group fairness in heterogeneous federated visual learning and addresses the weak coordination between client-side representation learning and server-side fairness calibration.",
+            "FAIRDARC combines multi-domain representation regulation on clients with fairness calibration in an aligned server-side space. This design coordinates local updates with the global debiasing objective while suppressing representations associated with sensitive attributes. Experiments on FairFace, UTKFace, and CelebA show reduced prediction disparities across groups while preserving competitive predictive performance.",
+          ],
+        },
+        {
+          title: "Paper 2 | BRIFi: Online poisoned-sample mining",
+          paragraphs: [
+            "“BRIFi: Client-Calibrated Online Poisoned-Sample Mining for Backdoor-Resilient Federated Learning” is authored by Yitong Ma as first author and Gang Yan as corresponding author. The paper moves backdoor defense into local training, addressing a limitation of server-only defenses: poisoned samples may already compromise client updates before aggregation.",
+            "BRIFi integrates cross-task visual detection, robust client-specific dynamic calibration, and budget-constrained filtering to identify suspicious poisoned samples before gradient updates while controlling the removal of benign data. Across four image-classification datasets and six backdoor attacks, the paper reports a reduction in mean attack success rate from 94.7% to 5.3%, with little change in clean-task accuracy.",
+          ],
+        },
+        {
+          title: "Shared research direction",
+          paragraphs: [
+            "FAIRDARC improves fairness through coordinated representation correction, whereas BRIFi protects local training by detecting and filtering malicious samples. Together, the papers advance the lab's research on fair, secure, and dependable federated learning.",
+          ],
+        },
+      ],
+    },
+  },
+  {
     meta: "2026-08-11 · ACM CIKM 2026",
     title: {
       zh: "实验室三篇论文被ACM CIKM 2026接收",
@@ -1483,6 +1552,20 @@ function compareFeaturedNews(a, b) {
 
 const curatedPaperOutcomeItems = [
   {
+    year: "2027",
+    title: "FAIRDARC: Dual-Level Aligned Representation Correction for Fair Federated Visual Learning",
+    venue: "ACM WSDM 2027",
+    authors: "Keqing Fan, Zhe Wang, Gang Yan",
+    topic: { zh: "公平联邦视觉学习", en: "Fair federated visual learning" },
+  },
+  {
+    year: "2027",
+    title: "BRIFi: Client-Calibrated Online Poisoned-Sample Mining for Backdoor-Resilient Federated Learning",
+    venue: "ACM WSDM 2027",
+    authors: "Yitong Ma, Gang Yan",
+    topic: { zh: "联邦学习后门防御", en: "Backdoor-resilient federated learning" },
+  },
+  {
     year: "2026",
     title: "FedRIDA: Coordinated Participation and Update Control for Time-Efficient Federated Learning",
     venue: "IEEE/ACM IWQoS 2026",
@@ -1746,6 +1829,7 @@ const paperVenuePriorityRules = [
   { pattern: /\b(?:NeurIPS|ICLR|ICML)\b/i, rank: 0 },
   { pattern: /\bKDD\b/i, rank: 10 },
   { pattern: /\bECCV\b/i, rank: 11 },
+  { pattern: /\bWSDM\b/i, rank: 12 },
   { pattern: /ACM Multimedia/i, rank: 13 },
   { pattern: /\bAAAI\b/i, rank: 14 },
   { pattern: /USENIX ATC/i, rank: 15 },
