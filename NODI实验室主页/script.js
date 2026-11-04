@@ -449,6 +449,20 @@ const translations = {
 
 const galleryItems = [
   {
+    id: "lab-autumn-outing-2026",
+    categoryKey: "daily",
+    month: { zh: "2026 年 10 月", en: "October 2026" },
+    title: { zh: "实验室秋游团建", en: "NODI Lab Autumn Outing" },
+    description: {
+      zh: "实验室成员开展秋季户外团建活动，在科研工作之外增进团队交流与协作。",
+      en: "NODI Lab members gathered for an autumn outdoor outing, strengthening communication and collaboration beyond their research activities.",
+    },
+    image: "assets/images/gallery/lab-autumn-outing-2026-10.jpg",
+    thumbnail: "assets/images/gallery/lab-autumn-outing-2026-10-thumb.jpg",
+    objectPosition: "50% 67%",
+    accent: ["#8a765f", "#e9e0d5", "#4f5d4a"],
+  },
+  {
     id: "ccst-50th-anniversary-2026",
     categoryKey: "academic",
     month: { zh: "2026 年 9 月", en: "September 2026" },
