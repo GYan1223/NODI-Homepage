@@ -926,6 +926,107 @@ html[lang="en"] .team-lead-text {
   margin-top: 16px;
 }
 
+.alumni-table {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.alumni-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.72fr) minmax(170px, 0.92fr) minmax(0, 1.7fr);
+  gap: 20px;
+  align-items: center;
+  min-height: 70px;
+  padding: 14px 18px;
+}
+
+.alumni-row + .alumni-row {
+  border-top: 1px solid var(--line);
+}
+
+.alumni-row-header {
+  min-height: 44px;
+  padding-block: 10px;
+  color: var(--muted-strong);
+  background: var(--paper-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.alumni-cell {
+  min-width: 0;
+  color: var(--muted-strong);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.alumni-name-value {
+  display: grid;
+  gap: 3px;
+}
+
+.alumni-name-value strong {
+  color: var(--ink-strong);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.alumni-name-value span {
+  color: var(--muted);
+  font-size: var(--type-label);
+  line-height: 1.35;
+}
+
+.alumni-destination-cell {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+@media (max-width: 620px) {
+  .alumni-table {
+    display: grid;
+    gap: 10px;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .alumni-row-header {
+    display: none;
+  }
+
+  .alumni-row:not(.alumni-row-header) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    min-height: 0;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, #fff, #fbfdff);
+  }
+
+  .alumni-cell {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+  }
+
+  .alumni-cell::before {
+    content: attr(data-label);
+    padding-top: 1px;
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+}
+
 .gallery-toolbar {
   display: flex;
   flex-wrap: wrap;

@@ -145,6 +145,15 @@ const translations = {
         showAll: "显示全部 {count} 位{label}",
         collapse: "收起 {label}",
       },
+      alumni: {
+        title: "毕业去向",
+        count: "{count} 人",
+        columns: {
+          name: "姓名",
+          cohort: "届别",
+          destination: "去向",
+        },
+      },
     },
     gallery: {
       eyebrow: "实验室活动",
@@ -367,6 +376,15 @@ const translations = {
         showAll: "View all {count} {label}",
         collapse: "Show fewer {label}",
       },
+      alumni: {
+        title: "Graduate Destinations",
+        count: "{count} graduates",
+        columns: {
+          name: "Name",
+          cohort: "Cohort",
+          destination: "Destination",
+        },
+      },
     },
     gallery: {
       eyebrow: "Lab Life",
@@ -448,6 +466,23 @@ const translations = {
 };
 
 const galleryItems = [
+  {
+    id: "yitong-ma-cikm-2026",
+    categoryKey: "academic",
+    month: { zh: "2026 年 11 月", en: "November 2026" },
+    title: {
+      zh: "马亦曈参加 ACM CIKM 2026 并作报告",
+      en: "Yitong Ma Presents at ACM CIKM 2026",
+    },
+    description: {
+      zh: "马亦曈赴意大利罗马参加第35届 ACM 国际信息与知识管理大会（CIKM 2026），并作题为“When Geometry Becomes Unreliable: Robust Federated Aggregation via Bounded Influence”的学术报告。",
+      en: "Yitong Ma presented “When Geometry Becomes Unreliable: Robust Federated Aggregation via Bounded Influence” at the 35th ACM International Conference on Information and Knowledge Management (CIKM 2026) in Rome.",
+    },
+    image: "assets/images/gallery/yitong-ma-cikm-2026-11.jpg",
+    thumbnail: "assets/images/gallery/yitong-ma-cikm-2026-11-thumb.jpg",
+    objectPosition: "50% 54%",
+    accent: ["#7a4f37", "#eadfd5", "#1e4d7d"],
+  },
   {
     id: "lab-autumn-outing-2026",
     categoryKey: "daily",
@@ -545,6 +580,23 @@ const galleryItems = [
     image: "assets/images/gallery/waic-2026-07.jpg",
     thumbnail: "assets/images/gallery/waic-2026-07.jpg",
     accent: ["#5f8ab9", "#d7e7f7", "#27456c"],
+  },
+  {
+    id: "yitong-ma-computility-2026",
+    categoryKey: "academic",
+    month: { zh: "2026 年 7 月", en: "July 2026" },
+    title: {
+      zh: "马亦曈参加第三届 CCF 分布式计算大会暨中国算力网大会",
+      en: "Yitong Ma Presents at CCF Computility 2026",
+    },
+    description: {
+      zh: "马亦曈参加第三届 CCF 分布式计算大会暨中国算力网大会（CCF Computility 2026），并围绕算力网与分布式系统相关研究作学术报告。",
+      en: "Yitong Ma presented research on computing-power networks and distributed systems at the 3rd CCF Distributed Computing Conference and China Computing Power Network Conference (CCF Computility 2026).",
+    },
+    image: "assets/images/gallery/yitong-ma-computility-2026-07.jpg",
+    thumbnail: "assets/images/gallery/yitong-ma-computility-2026-07-thumb.jpg",
+    objectPosition: "50% 50%",
+    accent: ["#4479a9", "#dce9f1", "#194b6f"],
   },
   {
     id: "istanbul-2026",
@@ -864,10 +916,7 @@ const teamGroups = [
     label: { zh: "本科生", en: "Undergraduate Students" },
     previewCount: TEAM_PREVIEW_COUNT,
     members: pickMembers([
-      "刘沛霖",
-      "林正烨",
       "王策然",
-      "李梦纯",
       "王涵平",
       "王天琦",
       "张卓群",
@@ -875,6 +924,33 @@ const teamGroups = [
       "赵传浩",
       "陈儒杰",
     ]),
+  },
+];
+
+const alumniEntries = [
+  {
+    name: { zh: "方宇帆", en: "Yufan Fang" },
+    cohort: { zh: "2026 届本科生", en: "Undergraduate Class of 2026" },
+    destination: {
+      zh: "日本东京大学硕士研究生",
+      en: "Master’s program at The University of Tokyo",
+    },
+  },
+  {
+    name: { zh: "刘沛霖", en: "Peilin Liu" },
+    cohort: { zh: "2027 届本科生", en: "Undergraduate Class of 2027" },
+    destination: {
+      zh: "清华大学深圳国际研究生院硕士研究生",
+      en: "Master’s program at Tsinghua Shenzhen International Graduate School",
+    },
+  },
+  {
+    name: { zh: "林正烨", en: "Zhengye Lin" },
+    cohort: { zh: "2027 届本科生", en: "Undergraduate Class of 2027" },
+    destination: {
+      zh: "复旦大学硕士研究生",
+      en: "Master’s program at Fudan University",
+    },
   },
 ];
 
@@ -2245,6 +2321,85 @@ function createMemberAvatar(member) {
   return avatar;
 }
 
+function renderAlumniDirectory() {
+  const section = document.createElement("section");
+  section.className = "team-group alumni-group";
+
+  const header = document.createElement("div");
+  header.className = "team-group-header";
+  header.innerHTML = `
+    <div>
+      <h3>${getTranslation("team.alumni.title")}</h3>
+    </div>
+    <span class="team-group-meta">${interpolate(getTranslation("team.alumni.count"), {
+      count: alumniEntries.length,
+    })}</span>
+  `;
+
+  const table = document.createElement("div");
+  table.className = "alumni-table";
+  table.setAttribute("role", "table");
+  table.setAttribute("aria-label", getTranslation("team.alumni.title"));
+
+  const tableHeader = document.createElement("div");
+  tableHeader.className = "alumni-row alumni-row-header";
+  tableHeader.setAttribute("role", "row");
+  ["name", "cohort", "destination"].forEach((column) => {
+    const columnHeader = document.createElement("span");
+    columnHeader.setAttribute("role", "columnheader");
+    columnHeader.textContent = getTranslation(`team.alumni.columns.${column}`);
+    tableHeader.appendChild(columnHeader);
+  });
+  table.appendChild(tableHeader);
+
+  alumniEntries.forEach((entry) => {
+    const row = document.createElement("div");
+    row.className = "alumni-row";
+    row.setAttribute("role", "row");
+
+    const nameCell = document.createElement("div");
+    nameCell.className = "alumni-cell alumni-name-cell";
+    nameCell.setAttribute("role", "cell");
+    nameCell.dataset.label = getTranslation("team.alumni.columns.name");
+
+    const nameValue = document.createElement("div");
+    nameValue.className = "alumni-name-value";
+    const primaryName = document.createElement("strong");
+    primaryName.textContent = getText(entry.name);
+    nameValue.appendChild(primaryName);
+
+    const alternateName = currentLanguage === "zh" ? entry.name.en : entry.name.zh;
+    if (alternateName && alternateName !== getText(entry.name)) {
+      const secondaryName = document.createElement("span");
+      secondaryName.textContent = alternateName;
+      nameValue.appendChild(secondaryName);
+    }
+    nameCell.appendChild(nameValue);
+
+    const cohortCell = document.createElement("div");
+    cohortCell.className = "alumni-cell alumni-cohort-cell";
+    cohortCell.setAttribute("role", "cell");
+    cohortCell.dataset.label = getTranslation("team.alumni.columns.cohort");
+    const cohortValue = document.createElement("span");
+    cohortValue.textContent = getText(entry.cohort);
+    cohortCell.appendChild(cohortValue);
+
+    const destinationCell = document.createElement("div");
+    destinationCell.className = "alumni-cell alumni-destination-cell";
+    destinationCell.setAttribute("role", "cell");
+    destinationCell.dataset.label = getTranslation("team.alumni.columns.destination");
+    const destinationValue = document.createElement("span");
+    destinationValue.textContent = getText(entry.destination);
+    destinationCell.appendChild(destinationValue);
+
+    row.append(nameCell, cohortCell, destinationCell);
+    table.appendChild(row);
+  });
+
+  section.append(header, table);
+  return section;
+}
+
 function renderTeamDirectory() {
   teamDirectory.innerHTML = "";
 
@@ -2336,6 +2491,8 @@ function renderTeamDirectory() {
 
     teamDirectory.appendChild(section);
   });
+
+  teamDirectory.appendChild(renderAlumniDirectory());
 }
 
 function renderUpdateColumn(container, button, items, key) {
