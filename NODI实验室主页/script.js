@@ -179,7 +179,7 @@ const translations = {
       papers: {
         kicker: "PUBLICATION RECORD",
         title: "完整论文列表",
-        note: "截至 2026 年 9 月共整理 32 项；同一年内先列会议论文，再列期刊论文，各类别内优先排列 Gang Yan 为第一作者、共同第一作者或末位作者的论文，再按发表场所层级排序。",
+        note: "截至 2026 年 11 月共整理 36 项；同一年内先列会议论文，再列期刊论文，各类别内优先排列 Gang Yan 为第一作者、共同第一作者或末位作者的论文，再按发表场所层级排序。",
         newTab: "（在新标签页打开）",
         scholar: "Google Scholar 完整列表",
         faculty: "吉林大学教师主页",
@@ -410,7 +410,7 @@ const translations = {
       papers: {
         kicker: "PUBLICATIONS",
         title: "Publications",
-        note: "32 published or accepted papers as of September 2026. Within each year, conference papers precede journal articles; work led by Gang Yan or listing him as senior or corresponding author appears first within each category, followed by venue prominence.",
+        note: "36 published or accepted papers as of November 2026. Within each year, conference papers precede journal articles; work led by Gang Yan or listing him as senior or corresponding author appears first within each category, followed by venue prominence.",
         newTab: " (opens in a new tab)",
         scholar: "Google Scholar",
         faculty: "Jilin University Faculty Profile",
@@ -955,6 +955,63 @@ const alumniEntries = [
 ];
 
 const publications = [
+  {
+    meta: "2026-11-13 · ACM KDD 2027",
+    title: {
+      zh: "实验室两篇论文被ACM KDD 2027接收",
+      en: "Two NODI Lab Papers Accepted to ACM KDD 2027",
+    },
+    text: {
+      zh: "两项研究分别聚焦联邦低秩微调中的鲁棒聚合与端云协同推理中的隐私保护。",
+      en: "The papers advance robust aggregation for federated low-rank fine-tuning and privacy protection in collaborative edge–cloud inference.",
+    },
+    detail: {
+      zh: [
+        {
+          title: "录用概况",
+          paragraphs: [
+            "实验室两篇研究论文被数据挖掘领域国际顶级学术会议 ACM SIGKDD Conference on Knowledge Discovery and Data Mining（KDD 2027）录用。两项研究聚焦可信人工智能与分布式智能系统中的安全和隐私问题，分别围绕联邦低秩微调中的鲁棒聚合与端云协同推理中的隐私保护展开，为提升分布式人工智能系统的安全性、隐私性与可靠性提供了新的技术思路。",
+          ],
+        },
+        {
+          title: "论文一｜FedSCAN：面向安全联邦低秩微调的谱约束鲁棒聚合",
+          paragraphs: [
+            "《Spectral-Constrained Robust Aggregation for Secure LoRA-Based Federated Learning》由胡文晗（第一作者）、王喆教授（第二作者）、黄睿（第三作者）和燕刚教授（通讯作者）共同完成。论文聚焦大模型低秩适配（LoRA）联邦学习中的拜占庭攻击防御问题。针对传统鲁棒聚合方法难以识别低秩参数空间中隐蔽恶意扰动的局限，研究提出谱约束鲁棒聚合框架 FedSCAN，从客户端更新的统计一致性与低秩参数的谱结构两个层面抑制恶意攻击，为安全高效的联邦模型微调提供了新思路。",
+            "FedSCAN 结合鲁棒统计估计与分块谱裁剪机制，在抑制异常客户端更新的同时，限制恶意扰动沿主导奇异方向的累积放大。在 Flickr30K、MS COCO、Tiny-ImageNet 和 CIFAR-100 等数据集上的实验表明，该方法在多种拜占庭攻击下具有良好的鲁棒性与训练稳定性。例如，在恶意客户端比例为 25% 的 Min-Max 攻击下，Tiny-ImageNet 上的平均准确率由 48.27% 提升至 86.90%，同时保持较低的计算开销与通信成本，为构建安全、可靠的参数高效联邦学习系统提供了新的技术路径。",
+          ],
+        },
+        {
+          title: "论文二｜ECoR：面向隐私保护分割推理的条件表征调控",
+          paragraphs: [
+            "《Excess Conditional Regulation of Representations for Privacy-Aware Split Inference》由高雪岩（共同第一作者）、范可晴（共同第一作者）、唐鑫教授（第二作者）和燕刚教授（通讯作者）共同完成。论文聚焦端云协同推理中的中间特征隐私泄露问题。针对传统隐私保护方法难以兼顾敏感信息抑制与任务预测性能的局限，研究提出过量条件表征调控框架 ECoR，通过自适应特征过滤与类别条件隐私约束，在保留任务相关信息的同时抑制敏感属性泄露，为隐私感知的分布式智能推理提供了新思路。",
+            "ECoR 融合通道、子空间及变换域的自适应特征调控机制，并结合类别条件对比约束与轻量化特征编码，实现对敏感信息的精细化抑制。在 CelebA、FairFace 和 UTKFace 等数据集上的实验表明，该方法在保持良好预测精度的同时，有效降低了敏感属性推断与数据重建风险。其中，在 CelebA 数据集上，敏感属性推断准确率由 99.41% 降至 59.26%，任务预测准确率保持在 91.75%，同时将特征传输数据量降低 75%，为构建兼顾隐私保护、预测性能与通信效率的端云协同智能系统提供了有效的技术方案。",
+          ],
+        },
+      ],
+      en: [
+        {
+          title: "Acceptance overview",
+          paragraphs: [
+            "Two NODI Lab papers have been accepted to the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD 2027), a premier international venue for data mining research. The papers address security and privacy in trustworthy AI and distributed intelligent systems through robust aggregation for federated low-rank fine-tuning and privacy-preserving collaborative edge–cloud inference.",
+          ],
+        },
+        {
+          title: "Paper 1 | FedSCAN: Spectral-constrained robust aggregation for secure federated low-rank fine-tuning",
+          paragraphs: [
+            "The author team of “Spectral-Constrained Robust Aggregation for Secure LoRA-Based Federated Learning” comprises Wenhan Hu (first author), Zhe Wang (second author), Rui Huang (third author), and Gang Yan (corresponding author). The paper studies Byzantine robustness in LoRA-based federated learning for foundation models. Existing robust aggregation methods can struggle to detect stealthy malicious perturbations in low-rank parameter spaces. FedSCAN addresses this limitation by jointly examining the statistical consistency of client updates and the spectral structure of low-rank parameters.",
+            "FedSCAN combines robust statistical estimation with block-wise spectral clipping to suppress anomalous client updates and limit the accumulation of malicious perturbations along dominant singular directions. Experiments on Flickr30K, MS COCO, Tiny-ImageNet, and CIFAR-100 demonstrate robust and stable training under multiple Byzantine attacks. With 25% malicious clients under a Min–Max attack, the reported mean accuracy on Tiny-ImageNet increases from 48.27% to 86.90%, while computational and communication overhead remain low.",
+          ],
+        },
+        {
+          title: "Paper 2 | ECoR: Conditional representation regulation for privacy-aware split inference",
+          paragraphs: [
+            "The author team of “Excess Conditional Regulation of Representations for Privacy-Aware Split Inference” comprises co-first authors Xueyan Gao and Keqing Fan, Xin Tang, and Gang Yan (corresponding author). The paper addresses privacy leakage from intermediate features in collaborative edge–cloud inference. ECoR combines adaptive feature filtering with class-conditional privacy constraints to suppress sensitive-attribute information while retaining task-relevant representations.",
+            "ECoR combines adaptive feature regulation across channel, subspace, and transform domains with class-conditional contrastive constraints and lightweight feature encoding. Experiments on CelebA, FairFace, and UTKFace show reduced risks of sensitive-attribute inference and data reconstruction while preserving predictive performance. On CelebA, sensitive-attribute inference accuracy decreases from 99.41% to 59.26%, task accuracy remains at 91.75%, and transmitted feature volume is reduced by 75%.",
+          ],
+        },
+      ],
+    },
+  },
   {
     meta: "2026-11-03 · ACM WSDM 2027",
     title: {
@@ -1641,6 +1698,20 @@ function compareFeaturedNews(a, b) {
 
 
 const curatedPaperOutcomeItems = [
+  {
+    year: "2027",
+    title: "Spectral-Constrained Robust Aggregation for Secure LoRA-Based Federated Learning",
+    venue: "ACM KDD 2027",
+    authors: "Wenhan Hu, Zhe Wang, Rui Huang, Gang Yan",
+    topic: { zh: "联邦低秩微调安全", en: "Secure federated low-rank fine-tuning" },
+  },
+  {
+    year: "2027",
+    title: "Excess Conditional Regulation of Representations for Privacy-Aware Split Inference",
+    venue: "ACM KDD 2027",
+    authors: "Xueyan Gao, Keqing Fan, Xin Tang, Gang Yan",
+    topic: { zh: "隐私保护分割推理", en: "Privacy-aware split inference" },
+  },
   {
     year: "2027",
     title: "FAIRDARC: Dual-Level Aligned Representation Correction for Fair Federated Visual Learning",
