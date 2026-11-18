@@ -79,25 +79,41 @@ const translations = {
       text: "实验室获得国家级与省级科研项目支持，为长期研究方向中的方法创新、系统实现和应用验证提供基础。",
       national: "国家级",
       provincial: "省级",
+      provincialMinisterial: "省部级",
+      provincialDepartment: "省厅级",
       period: "执行期",
       periodSeparator: "：",
       columns: {
         number: "序号",
         level: "层级",
         program: "资助项目",
+        lead: "负责人",
         description: "说明",
       },
       1: {
         title: "国家自然科学基金优秀青年科学基金项目（海外）",
+        lead: "燕刚",
         text: "支持青年学者自主开展创新性研究，为形成稳定研究方向与建设高水平科研团队提供持续基础。",
       },
       2: {
         title: "国家自然科学基金面上项目",
+        lead: "燕刚",
         text: "围绕自然科学基础研究中的重要问题，持续开展方法创新、理论分析、系统实现与实验验证。",
       },
       3: {
         title: "吉林省自然科学基金面上项目",
+        lead: "燕刚",
         text: "面向基础与应用基础研究需求，推进具有科学价值和区域影响力的研究工作。",
+      },
+      4: {
+        title: "吉林省教育厅科学研究项目优秀青年项目",
+        lead: "燕刚",
+        text: "吉林省教育厅支持优秀青年科研人员开展创新研究的省级科研项目。",
+      },
+      5: {
+        title: "吉林省教育厅博士研究生科研创新能力提升项目",
+        lead: "燕刚、马亦曈",
+        text: "吉林省教育厅支持博士研究生科研创新能力培养与科研实践的省级项目。",
       },
     },
     updates: {
@@ -310,25 +326,41 @@ const translations = {
       text: "Our work is supported by national and provincial research grants.",
       national: "National",
       provincial: "Provincial",
+      provincialMinisterial: "Provincial / Ministerial",
+      provincialDepartment: "Provincial Department",
       period: "Funding period",
       periodSeparator: ": ",
       columns: {
         number: "No.",
         level: "Level",
         program: "Program",
+        lead: "Principal Investigator(s)",
         description: "Description",
       },
       1: {
         title: "Excellent Young Scientists Fund Program (Overseas), National Natural Science Foundation of China",
+        lead: "Gang Yan",
         text: "Supports independent research and the development of a sustained research program and team.",
       },
       2: {
         title: "General Program, National Natural Science Foundation of China",
+        lead: "Gang Yan",
         text: "Supports investigator-initiated basic research in the natural sciences.",
       },
       3: {
         title: "General Program, Natural Science Foundation of Jilin Province",
+        lead: "Gang Yan",
         text: "Supports basic and applied basic research with scientific and regional relevance.",
+      },
+      4: {
+        title: "Outstanding Young Scholars Project, Scientific Research Program of the Education Department of Jilin Province",
+        lead: "Gang Yan",
+        text: "A provincial research program supporting outstanding early-career researchers.",
+      },
+      5: {
+        title: "Doctoral Research Innovation Capacity Enhancement Project, Education Department of Jilin Province",
+        lead: "Gang Yan, Yitong Ma",
+        text: "A provincial program supporting doctoral research training and research innovation.",
       },
     },
     updates: {
